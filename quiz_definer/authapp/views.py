@@ -30,7 +30,7 @@ def register(request):
 @login_required
 def my_profile(request):
     # getting data from cookies session
-    quizes = Quiz.objects.filter(author=request.user).values("caption", "genre")
+    quizes = Quiz.objects.only("caption", "genre").filter(author=request.user)
     return render(request, "registration/profile.html", {"user": request.user, "quizes": quizes})
 
 
@@ -39,5 +39,5 @@ def profile(request, nick):
     getting data by query to the database through the nickname from the url
     """
     user = User.objects.filter(nickname=nick)[0]
-    quizes = Quiz.objects.filter(author=user).values("caption", "genre")
+    quizes = Quiz.objects.only("caption", "genre").filter(author=user)
     return render(request, "registration/profile.html", {"user": user, "quizes": quizes})

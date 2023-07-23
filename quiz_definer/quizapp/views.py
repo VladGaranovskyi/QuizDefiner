@@ -19,14 +19,14 @@ class CreateQuizView(LoginRequiredMixin, View):
     def post(self, request):
         # check function needs to be added
         Quiz.objects.create_quiz(request)
-        return redirect('')
+        return redirect('/')
 
 
 class PassQuizView(LoginRequiredMixin, View):
     def get(self, request, quiz_caption):
 
         # getting object from db
-        quiz = Quiz.objects.get(caption=quiz_caption).values("caption", "questions", "result_ranges")
+        quiz = Quiz.objects.only("caption", "questions", "result_ranges").get(caption=quiz_caption)
 
         # receiving models of questions from many to many field
         questions_model = quiz.questions.all()

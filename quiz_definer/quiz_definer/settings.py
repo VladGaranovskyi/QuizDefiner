@@ -40,17 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authapp',
     'quizapp',
-    'django_elasticsearch_dsl',
+    #'django_elasticsearch_dsl',
     'search',
     'analytics',
     'rest_framework',
 ]
 
-ELASTICSEARCH_DSL = {
-    "default": {
-        "hosts": "localhost:9200"
-    }
-}
+#ELASTICSEARCH_DSL = {
+#    "default": {
+#        "hosts": "localhost:9200"
+#    }
+#}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

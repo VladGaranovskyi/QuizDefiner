@@ -21,5 +21,5 @@ def search(request):
             quizes = QuizDocument.search().query("term", caption=prompt)
 
         # creating list of quizes to help jinja parse it
-        quizes_models = [Quiz.objects.get(caption=q.caption) for q in quizes]
+        quizes_models = [Quiz.objects.only("caption", "genre").get(caption=q.caption) for q in quizes]
         return render(request, "main.html", {"quizes": quizes_models, "prompt": prompt})
