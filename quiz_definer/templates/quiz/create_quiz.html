@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<h2 align="center">Create Quiz</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text">Caption</span>
+      <input name="caption" type="text" class="form-control" aria-describedby="addon-wrapping">
+    </div>
+    <select class="form-select" name="genre" aria-label="Default select example">
+      <option value="" selected>Select Genre</option>
+      <option value="General">General</option>
+      <option value="Video Games">Video Games</option>
+      <option value="Memes">Memes</option>
+      <option value="Movies">Movies</option>
+      <option value="TV Series">TV Series</option>
+    </select>
+    <br>
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="addon-wrapping">Count of questions</span>
+      <input name="qCount" type="number" class="form-control" aria-describedby="addon-wrapping" id="questionCount">
+      <button type="button" class="btn btn-dark" onclick="createQuestions()">Apply</button>
+    </div>
+    <div id="questions">
+    </div>
+    <hr>
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text">Count of result ranges</span>
+      <input name="rCount" type="number" class="form-control" aria-describedby="addon-wrapping" id="rangesCount">
+      <button type="button" class="btn btn-dark" onclick="createRanges()">Apply</button>
+    </div>
+    <span id="maxmin" class="badge bg-secondary"></span>
+    <div id="ranges">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Create Quiz</button>
+</form>
+{% block scripts %}
+<script src="{% static 'js/quiz_create.js' %}"></script>
+{% endblock %}
+{% endblock %}

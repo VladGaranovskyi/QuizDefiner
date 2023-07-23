@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="/search/">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" name="prompt" placeholder="Enter prompt" value="{{ prompt }}">
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </div>
+    </div>
+    <select class="form-select" name="genre" aria-label="Default select example">
+      <option value="" selected>Select Genre</option>
+      <option value="General">General</option>
+      <option value="Video Games">Video Games</option>
+      <option value="Memes">Memes</option>
+      <option value="Movies">Movies</option>
+      <option value="TV Series">TV Series</option>
+    </select>
+</form>
+<br>
+{% if quizes %}
+  {% for quiz in quizes %}
+    <div class="quiz">
+        <a href="/quiz/page/{{ quiz.caption }}"><h2 class="div-center">{{ quiz.caption }}</h2></a>
+        <span class="badge bg-success"><h4>{{ quiz.genre }}</h4></span>
+        <h4 class="div-bottom">Author: <a href="/auth/profile/{{ quiz.author.nickname }}">{{ quiz.author.nickname }}</a></h4>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endblock %}

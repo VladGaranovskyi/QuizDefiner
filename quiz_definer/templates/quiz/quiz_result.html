@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 align="center">{{ msg }}</h3>
+{% if request.user == quiz.author %}
+<a href="{% url 'quiz_analytics' quiz.caption %}">View analytics</a>
+{% endif %}
+{% endblock %}

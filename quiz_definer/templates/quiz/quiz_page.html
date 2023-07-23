@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 align="center">{{ caption }}</h1>
+<p id="p">{{ questions | safe }}</p>
+<div class="question"><h2 class="div-center"></h2></div>
+<div class="answersGrid">
+    <button class="answer" onclick="answer(0)">Start</button>
+    <button class="answer" onclick="answer(0)">Start</button>
+    <button class="answer" onclick="answer(0)">Start</button>
+    <button class="answer" onclick="answer(0)">Start</button>
+</div>
+{% endblock %}
+{% load static %}
+{% block scripts %}
+<script src="{% static 'js/quiz_pass.js' %}">
+</script>
+{% endblock %}

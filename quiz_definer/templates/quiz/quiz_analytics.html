@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <div class="chart-container" style="height:1200; width:1200">
+            {{ html_code|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js_scripts %}
+{{ js_code | safe }}
+{% endblock %}
