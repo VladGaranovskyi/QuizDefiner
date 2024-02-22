@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'authapp',
     'quizapp',
     #'django_elasticsearch_dsl',
-    'search',
+    #'search',
     'analytics',
     'rest_framework',
 ]

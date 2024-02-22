@@ -1,0 +1,7 @@
+django
+sqlparse
+asgiref
+pandas
+palettable
+pymongo
+django_rest_framework
