@@ -1,4 +1,4 @@
-# Dental website prototype
+# Quiz Definer
 It's an app where you can create quizes and determine the result of the quiz by numbers.
 f. e. you can create quizes like, "Are you good enough at math?", or even "Who are you from Marvel's Avengers?".
 
