@@ -38,7 +38,7 @@ f. e. you can create quizes like, "Are you good enough at math?", or even "Who a
 </ul>
 
 As you are taking this test, you will answer questions, and each question will give you its points. In the result you will get your response if:
-rangeLeft < your score <= rangeRight
+rangeLeft < your score <= rangeRight.
 also the data about passing quiz is being collected and is displayed at analytics page, only author of the quiz can access it.
 
 ## Stack
